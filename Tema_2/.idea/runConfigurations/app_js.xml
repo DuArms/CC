@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="app.js" type="NodeJSConfigurationType" path-to-node="node" nameIsGenerated="true" path-to-js-file="dist/app.js" working-dir="$PROJECT_DIR$">
+    <method v="2" />
+  </configuration>
+</component>
