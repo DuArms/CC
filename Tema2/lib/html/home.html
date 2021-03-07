@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEMA_CC</title>
+    <link rel="stylesheet" href="./css/home_page.css">
+</head>
+<body>
+<h1>Tema 1 la CC</h1>
+<h2>Milea Robert 3B4</h2>
+
+<d class="basic-grid">
+
+    <p class="grid-item">
+        <p class="grid-item">Introdu un nume de artist</p>
+        <input class="form__field" id="artist_name" name="artist_name"/>
+        <button type="button" id="button_smecher">Generate link !</button>
+    </p>
+
+    <p class="grid-item">
+        <a id="link"></a>
+    </p>
+</d>
+
+
+<script>
+
+    document.getElementById("button_smecher").addEventListener("click", () => {
+        let v = document.getElementById("artist_name").value
+        console.log(v)
+
+        let xhr = new XMLHttpRequest();
+        xhr.open('get', 'http://localhost:4202/api/v1/get_results?_id=' + v);
+        xhr.send();
+        xhr.onload = function () {
+            console.log(xhr.response);
+
+            link = xhr.response
+            let link_place = document.getElementById("link")
+
+            //    link_place.href = str.link(link)
+            link_place.innerHTML = "Shere this link : " + link.link(link)
+
+
+        };
+    })
+</script>
+
+</body>
+</html>

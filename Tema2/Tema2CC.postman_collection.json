@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "ea27f1b1-5648-462d-8a85-8756595994a3",
+		"name": "Tema2CC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4202/api/v1/flori/getall?field_nume=1&field_culoare",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"api",
+						"v1",
+						"flori",
+						"getall"
+					],
+					"query": [
+						{
+							"key": "field_nume",
+							"value": "1"
+						},
+						{
+							"key": "field_culoare",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCountPentale",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4202/api/v1/flori/count?culoare=rosu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"api",
+						"v1",
+						"flori",
+						"count"
+					],
+					"query": [
+						{
+							"key": "culoare",
+							"value": "rosu"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddOneTest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "charset",
+						"value": "utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"toPost\" : {\r\n        \"AN\" : 2020 ,\r\n        \"NUME\" : \"narcisa\",\r\n        \"CULOARE\" : \"albastru\" ,\r\n        \"NUMAR_PETALE\" : 40,\r\n        \"TEST\" : \"test_insert\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4202/api/v1/flori/addone",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"api",
+						"v1",
+						"flori",
+						"addone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddManyTest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "charset",
+						"value": "utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"toPost\" : [{\r\n        \"AN\" : 1999 ,\r\n        \"NUME\" : \"narcisa\",\r\n        \"CULOARE\" : \"albastru\" ,\r\n        \"NUMAR_PETALE\" : 40,\r\n        \"TEST\" : \"test_insert\"\r\n    },{\r\n        \"AN\" : 2000 ,\r\n        \"NUME\" : \"narcisa\",\r\n        \"CULOARE\" : \"rosu\" ,\r\n        \"NUMAR_PETALE\" : 40,\r\n        \"TEST\" : \"test_insert\"\r\n    },{\r\n        \"AN\" : 2001 ,\r\n        \"NUME\" : \"narcisa\",\r\n        \"CULOARE\" : \"verde\" ,\r\n        \"NUMAR_PETALE\" : 40,\r\n        \"TEST\" : \"test_insert\"\r\n    },{\r\n        \"AN\" : 2003 ,\r\n        \"NUME\" : \"narcisa\",\r\n        \"CULOARE\" : \"albastru\" ,\r\n        \"NUMAR_PETALE\" : 40,\r\n        \"TEST\" : \"test_insert\"\r\n    }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4202/api/v1/flori/addmany",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"api",
+						"v1",
+						"flori",
+						"addmany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4202/api/v1/flori/by?nume=narcisa&order_by_an=-1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"api",
+						"v1",
+						"flori",
+						"by"
+					],
+					"query": [
+						{
+							"key": "nume",
+							"value": "narcisa"
+						},
+						{
+							"key": "order_by_an",
+							"value": "-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateName",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"toUpdate\" : {  \r\n        \"NUME\" : \"nu_narcisa\"\r\n    }\r\n       \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4202/api/v1/flori/update?nume=narcisa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"api",
+						"v1",
+						"flori",
+						"update"
+					],
+					"query": [
+						{
+							"key": "nume",
+							"value": "narcisa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateDate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4202/api/v1/flori/updateyear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"api",
+						"v1",
+						"flori",
+						"updateyear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4202/api/v1/flori/delete?test=test_insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"api",
+						"v1",
+						"flori",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "test_insert"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAll",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4202/api/v1/flori/deleteall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"api",
+						"v1",
+						"flori",
+						"deleteall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forbiden",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4202/../",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"..",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddOneNoBody",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4202/api/v1/flori/addone",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"api",
+						"v1",
+						"flori",
+						"addone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4202/api/v1/flori/byid?_ID=6044f2af60a2002508d27a12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4202",
+					"path": [
+						"api",
+						"v1",
+						"flori",
+						"byid"
+					],
+					"query": [
+						{
+							"key": "_ID",
+							"value": "6044f2af60a2002508d27a12"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
