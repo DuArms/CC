@@ -11,7 +11,7 @@ steps:
 #   entrypoint: yarn
 #   args: ['test']
 # Run custom commands
-- name: node
-  dir: 'Tema_3/'
-  entrypoint: yarn
-  args: ['start']
+# - name: node
+#   dir: 'Tema_3/'
+#   entrypoint: yarn
+#   args: ['start']
