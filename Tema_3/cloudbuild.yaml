@@ -3,6 +3,7 @@ steps:
 - name: node
   entrypoint: yarn
   args: ['install']
+  dir: 'Tema_3/'
 # Run tests
 # - name: node
 #   entrypoint: yarn
