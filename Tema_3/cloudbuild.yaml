@@ -1,7 +1,8 @@
-dir: 'Tema_3/'
+
 steps:
 # Install dependencies
 - name: node
+  dir: 'Tema_3/'
   entrypoint: yarn
   args: ['install']
 
@@ -11,5 +12,6 @@ steps:
 #   args: ['test']
 # Run custom commands
 - name: node
+  dir: 'Tema_3/'
   entrypoint: yarn
   args: ['start']
