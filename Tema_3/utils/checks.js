@@ -3,6 +3,7 @@ const { validationResult }  = require('express-validator');
 const { StatusCodes } = require('http-status-codes');
 
 const checkValidatorRules = function(req,res,next) {
+    console.log(req.body);
     if(isEmpty(req.body)) {
         const response = {status:'failed',message:'Body can not be empty'}
         res.status(StatusCodes.UNPROCESSABLE_ENTITY);
