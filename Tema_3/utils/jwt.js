@@ -1,10 +1,12 @@
 const jwt = require('jsonwebtoken');
 const { StatusCodes } = require('http-status-codes');
 
+const JWT_SECRET = 'jVK63H0SJ8';
+
 require('dotenv').config()
 
-const signToken = function(payload, secret) {
-    return jwt.sign(payload, secret, {
+const signToken = function(payload) {
+    return jwt.sign(payload, JWT_SECRET, {
         algorithm : "HS256",
         expiresIn: 86400
     });
@@ -13,7 +15,7 @@ const signToken = function(payload, secret) {
 const verifyToken = function(req,res) {
     try {
         const token = req.headers('authorization');
-        payload = jwt.verify(token,process.env.ACCESS_TOKEN_SECRET);
+        payload = jwt.verify(token,JWT_SECRET);
         res.locals.authToken = payload;
 
     } catch(err) {
@@ -26,5 +28,4 @@ const verifyToken = function(req,res) {
 module.exports = {
     signToken,
     verifyToken
-
 }

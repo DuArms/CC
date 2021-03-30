@@ -24,7 +24,7 @@ const login = async function(req,res) {
                 throw err;
             } else {
                 if(reslt) {
-                    const accessToken = signToken({uuid:uuid}, 'jVK63H0SJ8');
+                    const accessToken = signToken({uuid:uuid});
                     const response = {
                         status:'success',
                         content:{
