@@ -3,12 +3,11 @@ const { StatusCodes } = require('http-status-codes');
 
 require('dotenv').config()
 
-const signToken = function(payload, secret, duration) {
+const signToken = function(payload, secret) {
     return jwt.sign(payload, secret, {
         algorithm : "HS256",
-        expiresIn: duration
+        expiresIn: 86400
     });
-
 }
 
 const verifyToken = function(req,res) {

@@ -3,7 +3,7 @@ const router = require('express').Router();
 const { authController } = require('../controllers');
 
 const { checkJSONContentTypeHeader , checkValidatorRules } = require('../utils/checks');
-const { registerChain, loginChain, refreshChain } = require('../utils/rules');
+const { registerChain, loginChain } = require('../utils/rules');
 
 const registerValidations = registerChain();
 const loginValidations = loginChain();
@@ -20,6 +20,6 @@ const middlewaresLogin = [
 
 
 router.post('/register',registerValidations,middlewaresRegister,authController.register);
-router.post('/authenticate',loginValidations,middlewaresLogin,authController.login);
+router.post('/login',loginValidations,middlewaresLogin,authController.login);
 
 module.exports = router;
