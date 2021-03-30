@@ -41,7 +41,7 @@ const register = function(req,res) {
 
             res.status(StatusCodes.CREATED);
             res.end(JSON.stringify(response));
-  
+            
         }
     });
     
